@@ -7,7 +7,7 @@
 
 body {
     background-color: #03b3ce; /* bu yerga rasm manzilini yozing */
- background-image: url('logo.png');
+    background-image: url('logo.png');
     background-size: cover;
     min-height: 100vh;
     display: flex;
